@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  h1 {
+    text-align: center;
+  }
+  .add-product {
+    &--container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    &--card {
+      text-align: center;
+      border: 1px solid lightgray;
+      align-items: center;
+    }
+    &--btn {
+      background: #1a3c6b;
+      color: white;
+      border-radius: 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    &--img {
+      border-radius: 50%;
+    }
+    &--card-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

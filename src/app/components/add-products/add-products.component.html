@@ -1,0 +1,90 @@
+<section class="add-product-modal">
+  <div mat-dialog-title>
+    <div>
+      <h1>Add Product to Bakery</h1>
+      <h4>Step 1 of 3</h4>
+    </div>
+    <div>
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Example close icon"
+        mat-dialog-close
+        class="close-btn"
+        >close</mat-icon
+      >
+    </div>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <mat-dialog-content>
+    <form [formGroup]="addProductForm" class="add-product--form">
+      <mat-form-field appearance="outline">
+        <mat-label>UPC</mat-label>
+        <input matInput placeholder="000000000" formControlName="upc" />
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+      <mat-error
+        *ngIf="(addProductFormControl['upc'].touched || submitted) && addProductFormControl['upc'].errors?.['required']"
+      >
+        <div class="error">
+          <mat-icon matPrefix>error_outline</mat-icon>
+
+          This Product is Not Available!!
+        </div>
+      </mat-error>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Activity</mat-label>
+        <mat-select placeholder="Choose an Activity" formControlName="activity">
+          <mat-option value="one">First</mat-option>
+          <mat-option value="two">Second</mat-option>
+          <mat-option value="three">Three</mat-option>
+          <mat-option value="four">Four</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-error
+        *ngIf="(addProductFormControl['activity'].touched || submitted) && addProductFormControl['activity'].errors?.['required']"
+      >
+        <div class="error">
+          <mat-icon matPrefix>error_outline</mat-icon>
+          This Field is Required!
+        </div>
+      </mat-error>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Shelf Life (Days)</mat-label>
+        <input matInput formControlName="shelfDays" />
+      </mat-form-field>
+      <mat-error
+        *ngIf="(addProductFormControl['shelfDays'].touched || submitted) && addProductFormControl['shelfDays'].errors?.['required']"
+      >
+        <div class="error">
+          <mat-icon matPrefix>error_outline</mat-icon>
+          This Field is Required!
+        </div>
+      </mat-error>
+
+      <mat-checkbox formControlName="activateStore"
+        >Activate in Store</mat-checkbox
+      >
+    </form>
+  </mat-dialog-content>
+
+  <mat-divider></mat-divider>
+
+  <mat-dialog-actions class="add-product--action">
+    <button mat-stroked-button mat-dialog-close class="action-btn">
+      Cancel
+    </button>
+    <button
+      mat-stroked-button
+      cdkFocusInitial
+      color="primary"
+      class="action-btn"
+      (click)="onSubmit()"
+    >
+      Select Divisions
+    </button>
+  </mat-dialog-actions>
+</section>

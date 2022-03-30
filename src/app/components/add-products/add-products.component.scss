@@ -1,0 +1,47 @@
+.add-product-modal {
+  .mat-dialog-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px;
+  }
+  .close-btn {
+    cursor: pointer;
+    font-size: 30px;
+  }
+  .add-product {
+    &--form {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 24px;
+    }
+    &--action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .action-btn {
+        border-radius: 24px;
+      }
+    }
+  }
+  .error {
+    border: 1px solid red;
+    background: #ff9494;
+    border-radius: 5px;
+    color: red;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    padding: 5px;
+    mat-icon {
+      margin-left: 5px !important;
+      margin-right: 5px !important;
+    }
+  }
+  ::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 10px !important ;
+  }
+}
